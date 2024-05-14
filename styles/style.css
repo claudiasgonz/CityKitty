@@ -28,15 +28,15 @@ body {
   animation: slide 5s linear infinite;
 }
 /*animacion de background involves movement en el x axis para moverlo horizontalmente */
-@keyframes slide {
+@keyframes slide { /* movement esta right to left */
   0% {
-    background-position: -1000px 0;
+    background-position: 1000px 0; 
   }
   95% {
     background-position: 0 0;
   }
   100% {
-    background-position: 50px  0;
+    background-position: -50px  0;
   }
 }
 
@@ -53,9 +53,13 @@ body {
   width: 350px;
 }
 
+.instruction-img {
+
+}
+
 body button {
   font-size: 30px;
-  background-color: #870007;
+  background-color: #9e3158;
   color: #fff;
   padding: 20px 40px;
   border: 0;
@@ -72,3 +76,4 @@ body button {
   margin-left: 2%;
   margin-top: 1%;
 }
+

@@ -2,7 +2,7 @@ class Obstacle {
     constructor(gameScreen) {
         this.gameScreen = gameScreen
         this.left = Math.random() * 300 + 100
-        this.top = -150
+        this.top = -150 // responsible for making it appear at the top, tiene valor negativo para que aparezca fuera del screen primero
         this.width = 63
         this.height = 150
         this.element = document.createElement("img");
@@ -17,7 +17,7 @@ class Obstacle {
     }
 
     move() {
-        this.top += 3
+        this.top += 3 //incrementa el valor del top property, causandolo que se mueva para abajo gradualmente
         this.updatePostion()
     }
 
@@ -26,9 +26,9 @@ class Obstacle {
         this.element.style.top = `${this.top}px`;
     }
 
-    createExplosion() {
+    createSplash() {
         let newElement = document.createElement("img");
-        newElement.src = "../images/explosion.gif";
+        newElement.src = "../splash2.gif";
         newElement.style.position = "absolute";
         newElement.style.left = `${this.left}px`;
         newElement.style.top = `${this.top}px`;

@@ -6,7 +6,7 @@ class Game {
         this.gameEndScreen = document.getElementById('game-end')
         this.player = new Player(this.gameScreen, 215, 450, 66, 150, '../cat.gif')
         this.height = 600
-        this.width = 500
+        this.width = 1200 //width de gameScreen
         this.obstacles = []
         this.score = 0
         this.lives = 3
@@ -76,7 +76,7 @@ class Game {
             obstacle.move()
 
             if (this.player.didCollide(obstacle)) {
-                obstacle.createExplosion();
+                obstacle.createSplash();
                 obstacle.element.remove();
                 this.obstacles.splice(i, 1);
                 this.lives -= 1;
@@ -114,7 +114,7 @@ class Game {
         // this.clockContainer.style.display = "none";
         this.gameEndScreen.style.display = "inherit";
         if (this.timer <= 0) {
-          this.endMessage.innerText = `You won! You finished with a score of ${this.score} and ${this.returnLivesMessage()}!`;
+          this.endMessage.innerText = `You won! You finished with a score of ${this.score} and ${this.returnLivesMessage()} lives left!`;
         } else {
           this.endMessage.innerText = `You lost!  You ran out of lives and finished with a score of ${this.score}.`;
         }
