@@ -1,0 +1,74 @@
+body {
+  padding: 0;
+  text-align: center;
+  width: 98vw;
+  background: url("../start-bkg.png") 0 0 no-repeat;
+}
+
+#game-intro {
+  padding: 20px 0px;
+}
+
+#game-container {
+  display: flex;
+  width: 100%;
+  padding: 20px 0px;
+  justify-content: center;
+}
+
+#game-screen {
+  display: none;
+  align-content: center;
+  padding: 20px 0px; /* posicion del gato */
+  overflow: hidden;
+  position: relative;
+  background-image: url(../city-bkg.png);
+  background-size: cover;
+/*animation se encarga de mover el bkg con slide, abajo se define slide */
+  animation: slide 5s linear infinite;
+}
+/*animacion de background involves movement en el x axis para moverlo horizontalmente */
+@keyframes slide {
+  0% {
+    background-position: -1000px 0;
+  }
+  95% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px  0;
+  }
+}
+
+#game-end {
+  display: none;
+}
+
+.game-intro p {
+  font-size: 18px;
+  font-family: "Verdana";
+}
+
+.logo-img {
+  width: 350px;
+}
+
+body button {
+  font-size: 30px;
+  background-color: #870007;
+  color: #fff;
+  padding: 20px 40px;
+  border: 0;
+  box-shadow: 0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+#stats-container {
+  margin-right: 2%;
+}
+
+#clock-container {
+  margin-left: 2%;
+  margin-top: 1%;
+}
