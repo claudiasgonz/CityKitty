@@ -32,7 +32,9 @@ class Game {
         this.startScreen.style.display = 'none'
         this.startScreen.style.padding = 0
         this.startScreen.style.height = 0
-
+        this.stats.style.visibility = "visible"
+        this.clock.style.visibility = "visible"
+        this.clockContainer.style.visibility = "visible"
         this.gameScreen.style.display = 'block'
 
         this.gameIntervalId = setInterval(() => {
@@ -135,12 +137,16 @@ class Game {
             mouse.element.remove();
         });
 
+        
+        this.stats.style.display = "none"   //eliminates them from game end screen pero no aparecen en replay
+        this.clock.style.display = "none"   //eliminates them from game end screen pero no aparecen en replay
+        this.clockContainer.style.display = "none"  //eliminates them from game end screen pero no aparecen en replay
+
         this.gameScreen.style.height = `${0}px`;
         this.gameScreen.style.width = `${0}px`;
         this.gameScreen.style.display = "none";
         console.log("Game end screen", this.stats);
-        //this.stats.style.display = "none";          //removes stats and clock 
-        //this.clockContainer.style.display = "none"; 
+
         this.gameEndScreen.style.display = "inherit";
         if (this.timer <= 0) {
           this.endMessage.innerText = `You won! You finished with a score of ${this.score} and ${this.returnLivesMessage()} lives left!`;
