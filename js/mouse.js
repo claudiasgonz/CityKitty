@@ -1,8 +1,8 @@
 class Mouse {
     constructor(gameScreen) {
         this.gameScreen = gameScreen
-        this.right = -100                      //right se encarga del plano x
-        this.top = 525  //responsible for making it appear at the top, tiene valor negativo para que aparezca fuera del screen primero
+        this.right = -100                  //right se encarga del plano x. tiene valor negativo para que aparezca fuera del screen primero
+        this.top = 525                     //responsible for making it appear at the top, 
         this.width = 63
         this.height = 90
         this.element = document.createElement("img");
@@ -28,7 +28,7 @@ class Mouse {
 
     createSplash() {
         let newElement = document.createElement("img");
-        newElement.src = "../splash.gif";
+        newElement.src = "../plus1.gif";
         newElement.style.position = "absolute";
         newElement.style.right = `${this.right}px`;
         newElement.style.top = `${this.top}px`;

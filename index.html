@@ -14,19 +14,20 @@
       <div id="game-intro">
         <img src="./logo.png" alt="" class="logo-img" />
         <br />
-        <button id="start-button">
-          <img src="./starttext.png">
-        </button>
 
         <div id ="instructions">
           <img src="./instructions.png" alt="" class="instruction-img"/>
         </div>
 
+        <button id="start-button" class="start-button">
+          <img src="./startbtn.png" alt="" class="startbtn-img">
+        </button>
+
       </div>
 
       <div id="game-container">
 
-        <div id="stats-container">
+        <div id="stats-container">    
           <h2>Stats</h2>
           <p>Score: <span id="score">0</span></p>
           <p>Lives: <span id="lives">3</span></p>
@@ -46,11 +47,15 @@
       <!-- #game-end is initially hidden using CSS style display: none -->
       <div id="game-end">
         <img src="./logo.png" alt="" class="logo-img" />
-        <h1>Game Over</h1>
+        <h1> 
+          <img src="./gameover.png" alt="" class="gameover-img">
+        </h1>
         <br />
-        <p id="end-message"></p>
+        <p id="end-message" class="end-message"></p>
         <br />
-        <button id="restart-button">Restart</button>
+        <button id="restart-button" class="restart-button">
+          <img src="./playagainbtn.png" alt="" class="playagain-img">
+        </button>
       </div>
     </main>
 

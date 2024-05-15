@@ -27,17 +27,17 @@ class Player {
         this.directionX *= -0.5;
       }
   
-      //choca con techo
+      //gato choca con techo
       if (this.top <= this.height*2) {
         this.top = this.height*2;
         this.directionY *= -0.5;
       }
-      /*choca con pared*/
+      //gato choca con pared
       if (this.left >= this.gameScreen.offsetWidth - this.width - 10) {
         this.left = this.gameScreen.offsetWidth - this.width - 10;
         this.directionX *= -0.5;
       }
-      // choca con piso
+      //gato choca con piso
       if (this.top >= this.gameScreen.offsetHeight - this.height - 10) 
         {
         this.top = this.gameScreen.offsetHeight - this.height - 10;

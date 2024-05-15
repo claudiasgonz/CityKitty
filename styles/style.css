@@ -9,6 +9,20 @@ body {
   padding: 20px 0px;
 }
 
+.instruction-img {
+  width: 400px;
+}
+
+.startbtn-img {
+  padding-top: 25px;
+  padding-left: 20px;
+}
+
+.playagain-img {
+  padding-top: 25px;
+  padding-left: 25px;
+}
+
 #game-container {
   display: flex;
   width: 100%;
@@ -36,7 +50,7 @@ body {
     background-position: 0 0;
   }
   100% {
-    background-position: -50px  0;
+    background-position: -50px  0; /* negativo pq sale fuera del screen */
   }
 }
 
@@ -50,26 +64,53 @@ body {
 }
 
 .logo-img {
-  width: 350px;
+  width: 500px;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
 
-body button {
-  font-size: 30px;
+.start-button {
   background-color: #9e3158;
-  color: #fff;
-  padding: 20px 40px;
+  padding: 1px 70px;
   border: 0;
   box-shadow: 0;
-  border-radius: 5px;
-  margin-bottom: 20px;
+  border-radius: 10px;  /* rounded corners en boton */
+  margin-bottom:20px;
+  margin-top: 20px;  /* espacio entre boton a next element */
+}
+
+.gameover-img {
+  width: 300px;
+}
+
+.restart-button {
+  background-color: #9e3158;
+  padding: 2px 40px;
+  border: 0;
+  box-shadow: 0;
+  border-radius: 10px;  /* rounded corners en boton */
+  margin-bottom: 100px;
+  margin-top: 20px;  /* espacio entre boton a next element */
+}
+
+.end-message { 
+  font-size: 30px;
+  font-family: silom;
+  color: black;
 }
 
 #stats-container {
   margin-right: 2%;
+  font-family: silom;
+  color: black;
 }
 
 #clock-container {
   margin-left: 2%;
   margin-top: 1%;
+  font-family: silom;
+  color: black;
 }
+
+
 
