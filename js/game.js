@@ -8,6 +8,7 @@ class Game {
         this.height = 600
         this.width = 1200 //width de gameScreen
         this.obstacles = []
+        this.mice = []
         this.score = 0
         this.lives = 3
         this.timer = 30
@@ -42,9 +43,13 @@ class Game {
 
     gameLoop() {
         this.frames += 1
+        let random = Math.random()
 
-        if (this.frames % 120 === 0) {
+        if ((random < .005)) {
             this.obstacles.push(new Obstacle(this.gameScreen))
+        }
+        if ((Math.random() < .005)) {
+            this.mice.push(new Mouse(this.gameScreen))
         }
 
         this.update()
@@ -72,7 +77,8 @@ class Game {
     update() {
         this.player.move()
 
-        this.obstacles.forEach((obstacle, i) => {
+        this.obstacles.forEach((obstacle, i) => 
+            {
             obstacle.move()
 
             if (this.player.didCollide(obstacle)) {
@@ -82,12 +88,31 @@ class Game {
                 this.lives -= 1;
               }
 
-            if (obstacle.top > 640) {
+            if (obstacle.right > this.width) {
                 obstacle.element.remove()
                 this.obstacles.splice(i, 1)
                 this.score++
             }
         })
+
+        
+        this.mice.forEach((mouse, i) => 
+            {
+            mouse.move()
+
+            if (this.player.didCollide(mouse)) {
+                mouse.createSplash();
+                mouse.element.remove();
+                this.mice.splice(i, 1);
+                this.score += 1;
+              }
+
+            if (mouse.right > this.width) {
+                mouse.element.remove()
+                this.mice.splice(i, 1)
+            }
+        })
+        
 
         this.scoreElement.innerHTML = this.score;
         this.livesElement.innerHTML = this.lives;
@@ -105,6 +130,8 @@ class Game {
         this.obstacles.forEach((obstacle) => {
           obstacle.element.remove();
         });
+
+
 
         this.gameScreen.style.height = `${0}px`;
         this.gameScreen.style.width = `${0}px`;

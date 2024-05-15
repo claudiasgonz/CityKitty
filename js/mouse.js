@@ -1,4 +1,4 @@
-class Obstacle {
+class Mouse {
     constructor(gameScreen) {
         this.gameScreen = gameScreen
         this.right = -100                      //right se encarga del plano x
@@ -6,7 +6,7 @@ class Obstacle {
         this.width = 63
         this.height = 90
         this.element = document.createElement("img");
-        this.element.src = '../water-puddle.png';
+        this.element.src = '../mice.gif';
         this.element.style.position = "absolute"; 
         this.element.style.right = `${this.right}px`;
         this.element.style.top = `${this.top}px`;

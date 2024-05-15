@@ -27,17 +27,19 @@ class Player {
         this.directionX *= -0.5;
       }
   
-      if (this.top <= 10) {
-        this.top = 10;
+      //choca con techo
+      if (this.top <= this.height*2) {
+        this.top = this.height*2;
         this.directionY *= -0.5;
       }
-  
+      /*choca con pared*/
       if (this.left >= this.gameScreen.offsetWidth - this.width - 10) {
         this.left = this.gameScreen.offsetWidth - this.width - 10;
         this.directionX *= -0.5;
       }
-  
-      if (this.top >= this.gameScreen.offsetHeight - this.height - 10) {
+      // choca con piso
+      if (this.top >= this.gameScreen.offsetHeight - this.height - 10) 
+        {
         this.top = this.gameScreen.offsetHeight - this.height - 10;
         this.directionY *= -0.5;
       }
@@ -52,13 +54,13 @@ class Player {
   
     didCollide(obstacle) {
       const playerRect = this.element.getBoundingClientRect();
-      const obstacleRect = obstacle.element.getBoundingClientRect();
+      const obstacleRectangle = obstacle.element.getBoundingClientRect();
   
       if (
-        playerRect.left < obstacleRect.right &&
-        playerRect.right > obstacleRect.left &&
-        playerRect.top < obstacleRect.bottom &&
-        playerRect.bottom > obstacleRect.top
+        playerRect.left < obstacleRectangle.right &&
+        playerRect.right > obstacleRectangle.left &&
+        playerRect.top < obstacleRectangle.bottom &&
+        playerRect.bottom > obstacleRectangle.top
       ) {
         console.log("Colliding");
         return true;
