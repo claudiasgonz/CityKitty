@@ -5,7 +5,7 @@ class Game {
         this.gameScreen = document.getElementById("game-screen")
         this.gameEndScreen = document.getElementById('game-end')
         this.gameContainer = document.getElementById('game-container')
-        this.player = new Player(this.gameScreen, 215, 450, 66, 150, '../cat.gif')
+        this.player = new Player(this.gameScreen, 215, 450, 66, 150, 'cat.gif')
         this.height = 600
         this.width = 1000 //width de gameScreen
         this.obstacles = []

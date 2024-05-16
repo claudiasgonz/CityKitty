@@ -6,7 +6,7 @@ class Obstacle {
         this.width = 63
         this.height = 90
         this.element = document.createElement("img");
-        this.element.src = '../water-puddle.png';
+        this.element.src = 'water-puddle.png';
         this.element.style.position = "absolute"; 
         this.element.style.right = `${this.right}px`;
         this.element.style.top = `${this.top}px`;
@@ -28,7 +28,7 @@ class Obstacle {
 
     createSplash() {
         let newElement = document.createElement("img");
-        newElement.src = "../splash.gif";
+        newElement.src = "splash.gif";
         newElement.style.position = "absolute";
         newElement.style.right = `${this.right}px`;
         newElement.style.top = `${this.top}px`;

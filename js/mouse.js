@@ -6,7 +6,7 @@ class Mouse {
         this.width = 63
         this.height = 90
         this.element = document.createElement("img");
-        this.element.src = '../mice.gif';
+        this.element.src = 'mice.gif';
         this.element.style.position = "absolute"; 
         this.element.style.right = `${this.right}px`;
         this.element.style.top = `${this.top}px`;
@@ -28,7 +28,7 @@ class Mouse {
 
     createSplash() {
         let newElement = document.createElement("img");
-        newElement.src = "../plus1.gif";
+        newElement.src = "plus1.gif";
         newElement.style.position = "absolute";
         newElement.style.right = `${this.right}px`;
         newElement.style.top = `${this.top}px`;
