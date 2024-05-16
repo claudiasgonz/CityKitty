@@ -23,6 +23,10 @@ class Game {
         this.clockContainer = document.getElementById("clock-container");
         this.clock = document.getElementById("clock");
         this.endMessage = document.getElementById("end-message");
+        this.backgroundMusic = new Audio('BkgMusic.mp3');
+        this.splashSound = new Audio('splash.wav');
+        this.pointSound = new Audio('point.wav');
+        this.introMusic = new Audio('introMusic.wav');
     }
     
     start() {
@@ -46,6 +50,7 @@ class Game {
             this.gameLoop()
         }, this.gameLoopFrequency)
 
+        this.backgroundMusic.play()
     }
 
     gameLoop() {
@@ -75,9 +80,11 @@ class Game {
             this.gameIsOver = true;
           }
 
-        if (this.gameIsOver === true) {
+        if (this.gameIsOver === true) { 
             clearInterval(this.gameIntervalId)
             this.gameOverScreen();
+
+            this.backgroundMusic.pause();
         }
     }
 
@@ -90,6 +97,10 @@ class Game {
 
             if (this.player.didCollide(obstacle)) {
                 obstacle.createSplash();
+
+                this.splashSound.currentTime = 0;
+                this.splashSound.play();
+
                 obstacle.element.remove();
                 this.obstacles.splice(i, 1);
                 this.lives -= 1;
@@ -109,6 +120,10 @@ class Game {
 
             if (this.player.didCollide(mouse)) {
                 mouse.createSplash();
+
+                this.pointSound.currentTime = 0;
+                this.pointSound.play();
+
                 mouse.element.remove();
                 this.mice.splice(i, 1);
                 this.score += 1;
@@ -131,6 +146,7 @@ class Game {
     }
 
     gameOverScreen() {
+
         console.log("Game over");
         this.player.element.remove();
 
@@ -141,7 +157,6 @@ class Game {
         this.mice.forEach((mouse) => {  
             mouse.element.remove();
         });
-
         
         this.stats.style.display = "none"   //eliminates them from game end screen pero no aparecen en replay
         this.clock.style.display = "none"   //eliminates them from game end screen pero no aparecen en replay
@@ -154,8 +169,12 @@ class Game {
 
         this.gameEndScreen.style.display = "inherit";
         if (this.timer <= 0) {
+            let mySound = new Audio('WinGame.wav')
+            mySound.play()
           this.endMessage.innerText = `You won! You finished with a score of ${this.score} and ${this.returnLivesMessage()} lives left!`;
         } else {
+            let mySound = new Audio('LoseGame.wav')
+            mySound.play()
           this.endMessage.innerText = `You lost!  You ran out of lives and finished with a score of ${this.score}.`;
         }
       }
