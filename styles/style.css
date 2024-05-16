@@ -3,6 +3,7 @@ body {
   text-align: center;
   width: 98vw;
   background: url("../start-bkg.png") 0 0 no-repeat;
+  overflow: hidden;
 }
 
 #game-intro {
@@ -33,6 +34,7 @@ body {
 }
 
 #game-screen {
+  
   display: none;
   align-content: center;
   padding: 20px 0px; /* posicion del gato */
@@ -41,7 +43,7 @@ body {
   background-image: url(../city-bkg.png);
   background-size: cover;
 /*animation se encarga de mover el bkg con slide, abajo se define slide */
-  animation: slide 5s linear infinite;
+  animation: slide 10s linear infinite;
 }
 /*animacion de background involves movement en el x axis para moverlo horizontalmente */
 @keyframes slide { /* movement esta right to left */
@@ -52,17 +54,17 @@ body {
     background-position: 0 0;
   } */
   100% {
-    background-position: 150% 50%; /* negativo pq sale fuera del screen */
+    background-position: -4095px 50%; /* negativo pq sale fuera del screen */
   }
 }
 
 #game-end {
   display: none;
+  height: 80vh;
 }
 
 .logo-img {
   width: 500px;
-  margin-top: 100px;
   margin-bottom: 20px;
 }
 
@@ -77,7 +79,7 @@ body {
 }
 
 .gameover-gif {
-  width: 300px;
+  width: 200px;
 }
 
 .restart-button {
@@ -90,7 +92,7 @@ body {
 }
 
 .end-message { 
-  font-size: 30px;
+  font-size: 20px;
   font-family: silom;
   color: black;
 }

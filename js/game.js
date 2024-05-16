@@ -4,6 +4,7 @@ class Game {
         this.startScreen = document.getElementById('game-intro')
         this.gameScreen = document.getElementById("game-screen")
         this.gameEndScreen = document.getElementById('game-end')
+        this.gameContainer = document.getElementById('game-container')
         this.player = new Player(this.gameScreen, 215, 450, 66, 150, '../cat.gif')
         this.height = 600
         this.width = 1000 //width de gameScreen
@@ -25,16 +26,20 @@ class Game {
     }
     
     start() {
-
+        
         this.gameScreen.style.height = `${this.height}px`
         this.gameScreen.style.width = `${this.width}px`
         
         this.startScreen.style.display = 'none'
         this.startScreen.style.padding = 0
         this.startScreen.style.height = 0
+        //this.gameContainer.style.display = "block"
         this.stats.style.visibility = "visible"
         this.clock.style.visibility = "visible"
         this.clockContainer.style.visibility = "visible"
+        this.stats.style.display = "block"   
+        this.clock.style.display = "block"   
+        this.clockContainer.style.display = 'block'
         this.gameScreen.style.display = 'block'
 
         this.gameIntervalId = setInterval(() => {

@@ -38,7 +38,7 @@ window.onload = function () {
         }
       }
       
-      //ANADIR EVENT LISTENER PARA COGER A RATON?
+  
     })
     
   }
